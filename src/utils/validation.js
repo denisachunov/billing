@@ -27,6 +27,5 @@ export default ( billing, setErrors ) => {
         address: isAddress ? null : getError ( 'Please enter at least 7 symbols' ),
     });
 
-    return isName && isVat && isCompany && isCountry && isState 
-                && isAddress && isZip;
+    return isName && isVat && isCompany && isCountry && isState && isAddress && isZip;
 }

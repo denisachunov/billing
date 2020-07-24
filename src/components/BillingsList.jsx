@@ -23,17 +23,15 @@ export default () => {
                         </Table.Header>
                         <Table.Body>
                             {
-                                data.data.map (({ name, company, country, state, address }, index ) => {
-                                    return (
-                                        <Table.Row key={index}>
-                                            <Table.Cell>{name}</Table.Cell>
-                                            <Table.Cell>{company}</Table.Cell>
-                                            <Table.Cell>{country}</Table.Cell>
-                                            <Table.Cell>{state}</Table.Cell>
-                                            <Table.Cell>{address}</Table.Cell>
-                                        </Table.Row>
-                                    )
-                                })
+                                data.data.map (({ name, company, country, state, address }, index ) => (
+                                    <Table.Row key={index}>
+                                        <Table.Cell>{name}</Table.Cell>
+                                        <Table.Cell>{company}</Table.Cell>
+                                        <Table.Cell>{country}</Table.Cell>
+                                        <Table.Cell>{state}</Table.Cell>
+                                        <Table.Cell>{address}</Table.Cell>
+                                    </Table.Row>
+                                ))
                             }
                         </Table.Body>
                     </Table>
