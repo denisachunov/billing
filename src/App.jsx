@@ -5,6 +5,7 @@ import BillingContextProvider from './context/BillingsContext';
 import { Header, Container } from 'semantic-ui-react';
 
 export default () => (
+
     <BillingContextProvider>
       <Container>
         <Header as='h1' className="billing-header">
