@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Input, Dropdown, Grid, Form } from 'semantic-ui-react';
 import { BillingsContext } from '../context/BillingsContext';
-import { countries } from 'jsvat';
+import { isEropean } from '../utils/countries';
 import { find } from 'lodash';
 
 export default props => {
@@ -23,7 +23,7 @@ export default props => {
     const changeCountry = ( e, { value }) => {
         setErrors ( [] );
         setCountry ( value );
-        setIsEU ( !!find ( countries, { name: value }));
+        setIsEU ( isEropean ( value ));
         const { states } = find ( data.countries, { country: value });
         if ( states ) {
             setStateOptions (

@@ -2,11 +2,11 @@ import React, { useState, useContext } from 'react';
 import { Button, Modal, Form, Input } from 'semantic-ui-react';
 import { BillingsContext } from '../context/BillingsContext';
 import Country from './Country';
-import validation from '../validation/validation';
+import validation from '../utils/validation';
 
 export default () => {
 
-    const { addBilling, errors, setErrors } = useContext ( BillingsContext );
+    const { addBilling, errors, setErrors, data } = useContext ( BillingsContext );
 
     const [ name, setName ] = useState ('');
     const [ company, setCompany ] = useState ('');
@@ -73,7 +73,7 @@ export default () => {
             setAddress ('');
             setOpen ( false );
         }
-        const billing = { name, company, country, vat, state, zip, address };
+        const billing = { name, company, country, vat, state, zip, address, countries: data.countries };
         if ( approve && validation ( billing, setErrors )) {
             addBilling ( billing );
             clearFields();
